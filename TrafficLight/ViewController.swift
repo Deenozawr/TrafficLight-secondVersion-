@@ -27,6 +27,8 @@ final class ViewController: UIViewController {
     
     
     @IBAction func startButtonTapped() {
+        startButton.setTitle("NEXT", for: .normal)
+        
         if redLightView.alpha != 1 && yellowLightView.alpha != 1 {
             redLightView.alpha = 1
             greenLightView.alpha = 0.3
