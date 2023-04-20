@@ -7,20 +7,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
     
     @IBOutlet var redLightView: UIView!
     @IBOutlet var yellowLightView: UIView!
-    @IBOutlet var grennLightView: UIView!
+    @IBOutlet var greenLightView: UIView!
+    @IBOutlet var startButton: UIButton!
     
-    
+    private var cornerRadius: CGFloat = 75
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        startButton.layer.cornerRadius = 20  // не округляется
+        redLightView.layer.cornerRadius = cornerRadius
+        yellowLightView.layer.cornerRadius = cornerRadius
+        greenLightView.layer.cornerRadius = cornerRadius
     }
-
-
+    
+    
+    @IBAction func startButtonTapped() {
+        if redLightView.alpha != 1 && yellowLightView.alpha != 1 {
+            redLightView.alpha = 1
+            greenLightView.alpha = 0.3
+        } else if redLightView.alpha == 1 {
+            redLightView.alpha = 0.3
+            yellowLightView.alpha = 1
+        } else {
+            yellowLightView.alpha = 0.3
+            greenLightView.alpha = 1
+        }
+    }
 }
-
