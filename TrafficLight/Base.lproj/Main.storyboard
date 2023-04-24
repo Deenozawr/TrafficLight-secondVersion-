@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,29 +14,39 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hE-a5-YSE">
-                                <rect key="frame" x="121" y="117" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                            </view>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scD-yM-a2X">
-                                <rect key="frame" x="121" y="296" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            </view>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WND-ks-K8w">
-                                <rect key="frame" x="121" y="471" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Viu-gV-sWY">
+                                <rect key="frame" x="110" y="71" width="100" height="348"/>
+                                <subviews>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hE-a5-YSE">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </view>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scD-yM-a2X">
+                                        <rect key="frame" x="0.0" y="124" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    </view>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WND-ks-K8w">
+                                        <rect key="frame" x="0.0" y="248" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1hE-a5-YSE" firstAttribute="width" secondItem="scD-yM-a2X" secondAttribute="width" id="3oT-hk-fLV"/>
+                                    <constraint firstAttribute="height" secondItem="WND-ks-K8w" secondAttribute="height" multiplier="3.48" id="8O6-ny-NEq"/>
+                                    <constraint firstItem="scD-yM-a2X" firstAttribute="height" secondItem="WND-ks-K8w" secondAttribute="height" id="Hbr-TY-9VU"/>
+                                    <constraint firstAttribute="height" secondItem="scD-yM-a2X" secondAttribute="height" multiplier="3.48" id="MF1-3a-jHi"/>
+                                    <constraint firstItem="scD-yM-a2X" firstAttribute="width" secondItem="WND-ks-K8w" secondAttribute="width" id="OVq-dg-ja6"/>
+                                    <constraint firstItem="1hE-a5-YSE" firstAttribute="height" secondItem="scD-yM-a2X" secondAttribute="height" id="Yqt-TM-Wrq"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW0-hR-RLc">
-                                <rect key="frame" x="109" y="739" width="175" height="54"/>
+                                <rect key="frame" x="72.5" y="489" width="175" height="54"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="KDT-2D-TAf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="KDT-2D-TAf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -52,7 +62,12 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BW0-hR-RLc" secondAttribute="bottom" constant="25" id="4Lz-0n-Aop"/>
-                            <constraint firstItem="BW0-hR-RLc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rcp-eZ-kv7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Viu-gV-sWY" secondAttribute="trailing" constant="110" id="9Ud-42-fGj"/>
+                            <constraint firstItem="BW0-hR-RLc" firstAttribute="top" secondItem="Viu-gV-sWY" secondAttribute="bottom" constant="70" id="P0A-Fb-AWO"/>
+                            <constraint firstItem="BW0-hR-RLc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72.5" id="QLb-Bc-nNX"/>
+                            <constraint firstItem="Viu-gV-sWY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="kYX-Ik-609"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BW0-hR-RLc" secondAttribute="trailing" constant="72.5" id="t5M-TS-EV7"/>
+                            <constraint firstItem="Viu-gV-sWY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="xan-Lh-2p8"/>
                         </constraints>
                     </view>
                     <connections>

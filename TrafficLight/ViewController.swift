@@ -15,11 +15,11 @@ final class ViewController: UIViewController {
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var startButton: UIButton!
     
-    private var cornerRadius: CGFloat = 75
+    private var cornerRadius: CGFloat = 83
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startButton.layer.cornerRadius = 20  // не округляется
+        startButton.layer.cornerRadius = 20
         redLightView.layer.cornerRadius = cornerRadius
         yellowLightView.layer.cornerRadius = cornerRadius
         greenLightView.layer.cornerRadius = cornerRadius
